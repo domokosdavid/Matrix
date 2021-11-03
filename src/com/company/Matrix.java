@@ -36,6 +36,46 @@ public class Matrix {
         return this.sorokSzama == this.oszlopokSzama;
     }
 
+
+    //számok összege
+    public long szamokOsszege(){
+        int osszeg = 0;
+        for (int i = 0; i < sorokSzama; i++){
+            for (int j = 0; j < oszlopokSzama; j++){
+                osszeg += matrix[i][j];
+            }
+        }
+        return osszeg;
+    }
+
+    //párosak
+    public int parosakSzama(){
+        int db = 0;
+        for (int i = 0; i < sorokSzama; i++){
+            for (int j = 0; j < oszlopokSzama; j++){
+                if(matrix[i][j] % 2 == 0){
+                    db++;
+                }
+            }
+        }
+
+        return db;
+    }
+
+    //legnagyobb elem
+    public int legnagyobbElem(){
+        int max = matrix[0][0];
+        for (int i = 0; i < sorokSzama; i++){
+            for (int j = 0; j < oszlopokSzama; j++){
+                if(matrix[i][j] > max){
+                    max = matrix[i][j];
+                }
+            }
+        }
+        return max;
+    }
+
+
     @Override
     public String toString() {
         String s = "";
